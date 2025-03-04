@@ -1,4 +1,6 @@
 <%= form_with  model: @order, id: 'charge-form', class: 'card-form',local: true do |f| %>
+  <%= render 'layouts/error_messages', model: @order %>  
+    <%# #@orderをmodelと読みかえて部分テンプレート内の処理を行うように明示 %>
   <div class='form-wrap'>
     <%= f.label :price, "金額" %>
     <%= f.text_field :price, class:"price", placeholder:"例)2000" %>
