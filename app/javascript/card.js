@@ -1,5 +1,6 @@
 const pay = () => {
-  const payjp = Payjp('pk_test_***********************')// PAY.JPテスト公開鍵
+  const publicKey = gon.public_key
+  const payjp = Payjp(publicKey) // PAY.JPテスト公開鍵
   const elements = payjp.elements();  //入力の部品を作る準備
   const numberElement = elements.create('cardNumber'); //「カード番号」を入力する場所の部品を作る
   const expiryElement = elements.create('cardExpiry'); //「カードの有効期限」を入力する場所の部品を作る
