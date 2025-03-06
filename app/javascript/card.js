@@ -1,5 +1,5 @@
 const pay = () => {
-  const payjp = Payjp('pk_test_ca69e7809393e67ab18301d5')// PAY.JPテスト公開鍵
+  const payjp = Payjp('pk_test_***********************')// PAY.JPテスト公開鍵
   const elements = payjp.elements();  //入力の部品を作る準備
   const numberElement = elements.create('cardNumber'); //「カード番号」を入力する場所の部品を作る
   const expiryElement = elements.create('cardExpiry'); //「カードの有効期限」を入力する場所の部品を作る
@@ -19,9 +19,9 @@ const pay = () => {
         // エラーがなかったら
         const token = response.id;
         const renderDom = document.getElementById("charge-form"); //charge-form」という名前のHTML要素を見つけて、それを renderDom という変数に保存
-        const tokenObj = `<input value=${token} name='token'>`; //トークンを含む新しいHTMLの入力フィールドを作成
+        const tokenObj = `<input value=${token} name='token' type="hidden">`; //トークンを含む新しいHTMLの入力フィールドを作成
         renderDom.insertAdjacentHTML("beforeend", tokenObj);  //フォームの一番下に新しいトークンの入力フィールドを追加（tokenObj（新しい入力フィールド）を、renderDom（つまり「charge-form」要素）の中に追加。「beforeend」は、要素の最後の部分に追加することを指す）
-        debugger; //デバッグ用の特別な命令
+        // debugger; //デバッグ用の特別な命令
       }
     });
 
