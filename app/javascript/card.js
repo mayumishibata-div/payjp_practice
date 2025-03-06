@@ -18,7 +18,10 @@ const pay = () => {
       } else {
         // エラーがなかったら
         const token = response.id;
-        console.log(token)
+        const renderDom = document.getElementById("charge-form"); //charge-form」という名前のHTML要素を見つけて、それを renderDom という変数に保存
+        const tokenObj = `<input value=${token} name='token'>`; //トークンを含む新しいHTMLの入力フィールドを作成
+        renderDom.insertAdjacentHTML("beforeend", tokenObj);  //フォームの一番下に新しいトークンの入力フィールドを追加（tokenObj（新しい入力フィールド）を、renderDom（つまり「charge-form」要素）の中に追加。「beforeend」は、要素の最後の部分に追加することを指す）
+        debugger; //デバッグ用の特別な命令
       }
     });
 
