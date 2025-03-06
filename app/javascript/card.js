@@ -30,7 +30,6 @@ const pay = () => {
       document.getElementById("charge-form").submit();
     });
 
-
     console.log("フォーム送信時にイベント発火")
     e.preventDefault();
     // e.preventDefault();で通常のRuby on Railsにおけるフォーム送信処理はキャンセルされています。
