@@ -23,6 +23,10 @@ const pay = () => {
         renderDom.insertAdjacentHTML("beforeend", tokenObj);  //フォームの一番下に新しいトークンの入力フィールドを追加（tokenObj（新しい入力フィールド）を、renderDom（つまり「charge-form」要素）の中に追加。「beforeend」は、要素の最後の部分に追加することを指す）
         // debugger; //デバッグ用の特別な命令
       }
+      // カード情報を入力するためのフィールドをすべて空にするための記述
+      numberElement.clear();
+      expiryElement.clear();
+      cvcElement.clear();
     });
 
 
